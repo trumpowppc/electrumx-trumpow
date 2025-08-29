@@ -1296,6 +1296,26 @@ class DogecoinTestnet(Dogecoin):
     GENESIS_HASH = ('bb0a78264637406b6360aad926284d54'
                     '4d7049f45189db5664f3c4d07350559e')
 
+class Trumpow(AuxPowMixin, Coin):
+    NAME = "Trumpow"
+    SHORTNAME = "TRMP"
+    NET = "mainnet"
+    XPUB_VERBYTES = bytes.fromhex("02fadafe")
+    XPRV_VERBYTES = bytes.fromhex("02fac495")
+    P2PKH_VERBYTE = bytes.fromhex("41")
+    P2SH_VERBYTES = (bytes.fromhex("1C"),)
+    WIF_BYTE = bytes.fromhex("97")
+    GENESIS_HASH = ('e81c430d51410470bcefcd8ecd4661bd'
+                    'e27fb2ef14df54d48fb6c2cdaa0c1fde')
+    PEERS = [
+        'dnsseed.trumpow.meme t50001 s50002',
+    ]
+    TX_COUNT = 62144
+    TX_COUNT_HEIGHT = 50804
+    TX_PER_BLOCK = 1
+    RPC_PORT = 33884
+    REORG_LIMIT = 100000
+    DESERIALIZER = lib_tx.DeserializerAuxPowSegWit
 
 # Source: https://github.com/dashpay/dash
 class Dash(Coin):
